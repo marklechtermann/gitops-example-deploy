@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: gitops-example
+  name: gitops-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitops-example
+  template:
+    metadata:
+      labels:
+        app: gitops-example
+    spec:
+      containers:
+        - image: marklechtermann/gitops-example-app:0.0.5
+          name: gitops-example-app
