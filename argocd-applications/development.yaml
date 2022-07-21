@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitops-example-app-production
+  name: gitops-example-app-development
   namespace: argocd
 spec:
   destination:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: deployments/overlays/production
+    path: deployments/overlays/development
     repoURL: https://github.com/marklechtermann/gitops-example-deploy
     targetRevision: HEAD
   syncPolicy:
