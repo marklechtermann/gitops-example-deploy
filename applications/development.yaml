@@ -3,6 +3,10 @@ kind: Application
 metadata:
   name: gitops-example-app-development
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: gitops-example-app=marklechtermann/gitops-example-app
+    argocd-image-updater.argoproj.io/gitops-example-app.update-strategy: latest
+    argocd-image-updater.argoproj.io/gitops-example-app.allow-tags: regexp:^[0-9]?\.[0-9]?\.[0-9]?-dev-\.*$    
 spec:
   destination:
     namespace: development
