@@ -15,5 +15,5 @@ spec:
         app: gitops-example
     spec:
       containers:
-        - image: marklechtermann/gitops-example-app:0.0.5
+        - image: marklechtermann/gitops-example-app
           name: gitops-example-app
