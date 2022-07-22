@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: argocd-applications
+    path: applications
     repoURL: https://github.com/marklechtermann/gitops-example-deploy
     targetRevision: HEAD
   syncPolicy:
