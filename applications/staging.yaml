@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-example-app-staging
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/my-app-service.allow-tags: 'regexp:^[0-9]?\.[0-9]?\.[0-9]?-main.*$'
+    argocd-image-updater.argoproj.io/my-app-service.update-strategy: latest
+    argocd-image-updater.argoproj.io/image-list: my-app-service=marklechtermann/gitops-example-app
+    argocd-image-updater.argoproj.io/write-back-method: argocd  
+spec:
+  destination:
+    namespace: staging
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: deployments/overlays/staging
+    repoURL: https://github.com/marklechtermann/gitops-example-deploy
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true      
