@@ -8,7 +8,7 @@ kubectl apply -k installation
 
 ## Login into ArgoCD
 
-<argocd.127.0.0.1.nip.io>
+http://argocd.127.0.0.1.nip.io
 
 You can now log in to the ArgoCD UI. The default user is `admin`.  
 To retrieve the password you can use the folden command:  
