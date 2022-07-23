@@ -1,11 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitops-example-app-of-app
+  name: gitops-example-app-of-apps
   namespace: argocd
 spec:
   destination:
-    namespace: development
     server: https://kubernetes.default.svc
   project: default
   source:
@@ -16,5 +15,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true      

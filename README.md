@@ -22,5 +22,5 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 Now all argocd apps can be installed:  
 
 ```bash
-kubectl apply -f app-of-app/manifest.yaml
+kubectl apply -f app-of-apps/manifest.yaml
 ```
