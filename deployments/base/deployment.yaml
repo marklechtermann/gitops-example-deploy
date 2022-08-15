@@ -17,3 +17,10 @@ spec:
       containers:
         - image: marklechtermann/gitops-example-app
           name: gitops-example-app
+          env:
+            - name: MYSECRET
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: password
+                  optional: true
