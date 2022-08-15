@@ -8,4 +8,3 @@ resources:
   - argocd.yaml
   - argocd-ingress.yaml
   - argodcd-image-updater.yaml
-  - sealed-secrets.yaml
