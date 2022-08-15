@@ -43,9 +43,9 @@ kubectl apply -f app-of-apps/manifest.yaml
 ## Create a new sealed-secret
 
 ```bash
-echo -n 1234567 | kubectl create secret generic mysecret -n development --dry-run=client --from-file=password=/dev/stdin -o yaml  | kubeseal > /home/markl/git/github/gitops-example-deploy/deployments/overlays/development/sealed-secret.yaml
+echo -n 1234567 | kubectl create secret generic mysecret -n development --dry-run=client --from-file=password=/dev/stdin -o yaml  | kubeseal -o yaml > /home/markl/git/github/gitops-example-deploy/deployments/overlays/development/sealed-secret.yaml
 
-echo -n abcdef | kubectl create secret generic mysecret -n production --dry-run=client --from-file=password=/dev/stdin -o yaml  | kubeseal > /home/markl/git/github/gitops-example-deploy/deployments/overlays/production/sealed-secret.yaml
+echo -n abcdef | kubectl create secret generic mysecret -n production --dry-run=client --from-file=password=/dev/stdin -o yaml  | kubeseal -o yaml > /home/markl/git/github/gitops-example-deploy/deployments/overlays/production/sealed-secret.yaml
 
-echo -n xyz | kubectl create secret generic mysecret -n staging --dry-run=client --from-file=password=/dev/stdin -o yaml  | kubeseal > /home/markl/git/github/gitops-example-deploy/deployments/overlays/staging/sealed-secret.yaml
+echo -n xyz | kubectl create secret generic mysecret -n staging --dry-run=client --from-file=password=/dev/stdin -o yaml  | kubeseal -o yaml > /home/markl/git/github/gitops-example-deploy/deployments/overlays/staging/sealed-secret.yaml
 ```
