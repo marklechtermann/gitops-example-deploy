@@ -7,7 +7,7 @@ resources:
 
 images:
   - name: marklechtermann/gitops-example-app
-    newTag: 0.0.8
+    newTag: 1.0.0
 
 patchesJson6902:
   - target:
