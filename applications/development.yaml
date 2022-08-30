@@ -4,10 +4,12 @@ metadata:
   name: gitops-example-app-development
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/my-app-service.allow-tags: 'regexp:^[0-9]?\.[0-9]?\.[0-9]?-dev.*$'
+    argocd-image-updater.argoproj.io/my-app-service.allow-tags: 'regexp:^[0-9]+\.[0-9]+\.[0-9]+-dev.*$'
     argocd-image-updater.argoproj.io/my-app-service.update-strategy: latest
     argocd-image-updater.argoproj.io/image-list: my-app-service=marklechtermann/gitops-example-app
     argocd-image-updater.argoproj.io/write-back-method: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: development

@@ -6,6 +6,8 @@ metadata:
   annotations:
     #argocd-image-updater.argoproj.io/image-list: marklechtermann/gitops-example-app:0.x
     #argocd-image-updater.argoproj.io/write-back-method: git
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: production

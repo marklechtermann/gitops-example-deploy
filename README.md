@@ -9,6 +9,7 @@ kubectl apply -k installation/argocd
 ## Install sealed-secrets
 
 ```bash
+kubectl apply -f installation/sealed-secrets/key/master-key.yaml
 kubectl apply -f installation/sealed-secrets/manifest.yaml
 ```
 
